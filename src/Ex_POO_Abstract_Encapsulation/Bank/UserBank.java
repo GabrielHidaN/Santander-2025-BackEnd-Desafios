@@ -22,7 +22,20 @@ public class UserBank extends Bank{
          double valor = scanner.nextDouble();
          double valorDepositado = getSaldo() + valor;
          setSaldo(valorDepositado);
-        System.out.println(ANSI_GREEN + "Valor Depositado com Sucesso"+ ANSI_RESET );
+        System.out.printf(ANSI_GREEN + "Valor Depositado com Sucesso, Você Depositou R$ %.2f. \n"+ ANSI_RESET , valorDepositado);
+
+    }
+    public void sacar() {
+        System.out.printf(ANSI_BLUE+ "Olá %s, Seu Saldo Disponível é: R$ %.2f \n" +ANSI_RESET , getNome(),getSaldo());
+        System.out.println(ANSI_Yellow + "Digite o Valor que Deseja Sacar: " + ANSI_RESET);
+        double valor = scanner.nextDouble();
+        if (valor > getSaldo()){
+            System.out.println(ANSI_RED +"O Saque Falhou , Saldo Insuficiente Para completar a Operação. " + ANSI_RESET);
+            return;
+        }
+        double valorSacado = getSaldo() - valor;
+        setSaldo(valorSacado);
+        System.out.printf(ANSI_GREEN + "Valor Sacado com Sucesso , Você Sacou R$ %.2f. \n"+ ANSI_RESET  , valorSacado);
 
     }
 }

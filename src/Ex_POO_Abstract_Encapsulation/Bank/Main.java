@@ -51,7 +51,7 @@ public class Main {
          UserBank userBank = new UserBank(nome , saldo);
          double setChequeEspecial = userBank.getSaldo() <= 500 ? 50 : (userBank.getSaldo() /2);
          userBank.setChequeEspecial(setChequeEspecial);
-         System.out.println(ANSI_GREEN + "Usuário Registrado com Sucesso" + ANSI_RESET);
+         System.out.println(ANSI_GREEN + "Usuário Registrado com Sucesso." + ANSI_RESET);
 
 
          do {
@@ -71,12 +71,12 @@ public class Main {
 
              switch (option){
 
-                 case "1"-> System.out.printf("Olá %s, Seu Saldo Atual: R$ %.2f \n" ,userBank.getNome() ,  userBank.getSaldo());
-                 case "2"-> System.out.printf("Olá %s, Cheque Especial Disponível de : R$ %.2f \n" ,userBank.getNome() , userBank.getChequeEspecial());
+                 case "1"-> System.out.printf("Olá %s, Seu Saldo Atual: R$ %.2f. \n" ,userBank.getNome() ,  userBank.getSaldo());
+                 case "2"-> System.out.printf("Olá %s, Cheque Especial Disponível de : R$ %.2f. \n" ,userBank.getNome() , userBank.getChequeEspecial());
                  case "3"-> userBank.depositar();
-                 case "4"-> System.out.printf("Saldo Atual: R$ %.2f \n" , userBank.getSaldo());
-                 case "5"-> System.out.printf("Saldo Atual: R$ %.2f \n" , userBank.getSaldo());
-                 case "6"-> System.out.printf("Saldo Atual: R$ %.2f \n" , userBank.getSaldo());
+                 case "4"->  userBank.sacar();
+                 case "5"-> System.out.printf("Saldo Atual: R$ %.2f. \n" , userBank.getSaldo());
+                 case "6"-> System.out.printf("Saldo Atual: R$ %.2f. \n" , userBank.getSaldo());
                  default -> System.out.println("sas");
 
              }
