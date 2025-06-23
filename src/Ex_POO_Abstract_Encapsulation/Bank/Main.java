@@ -1,8 +1,8 @@
 package Ex_POO_Abstract_Encapsulation.Bank;
 
-import java.text.NumberFormat;
+
 import java.util.Scanner;
-import java.util.SortedMap;
+
 
 public class Main {
 
@@ -29,7 +29,7 @@ public class Main {
             O o valor do cheque especial é definido no momento da criação da conta, de acordo com o valor depositado na conta em sua criação;
             Se o valor depositado na criação da conta for de R$500,00 ou menos o cheque especial deve ser de R$50,00
             Para valores acima de R$500,00 o cheque especial deve ser de 50% do valor depositado;
-            Caso o limite de cheque especial seja usado, assim que possível a conta deve cobrar uma taxa de 20% do valor usado do cheque especial.*/
+            TODO: Caso o limite de cheque especial seja usado, assim que possível a conta deve cobrar uma taxa de 20% do valor usado do cheque especial.*/
 
 
 
@@ -62,27 +62,24 @@ public class Main {
              System.out.println("2. Consultar Cheque Especial");
              System.out.println("3. Depositar");
              System.out.println("4. Sacar");
-             System.out.println("5. Pagar Boleto");
-             System.out.println("6. Cheques Especiais Ativos");
+             System.out.println("5. Usar Cheque Especial");
              System.out.println("0. Sair");
 
              option = scanner.next();
 
 
              switch (option){
-
-                 case "1"-> System.out.printf("Olá %s, Seu Saldo Atual: R$ %.2f. \n" ,userBank.getNome() ,  userBank.getSaldo());
-                 case "2"-> System.out.printf("Olá %s, Cheque Especial Disponível de : R$ %.2f. \n" ,userBank.getNome() , userBank.getChequeEspecial());
+                 case "0" -> {continue;}
+                 case "1"-> userBank.consultarSaldo();
+                 case "2"-> userBank.consultarChequeEspecial();
                  case "3"-> userBank.depositar();
                  case "4"->  userBank.sacar();
-                 case "5"-> System.out.printf("Saldo Atual: R$ %.2f. \n" , userBank.getSaldo());
-                 case "6"-> System.out.printf("Saldo Atual: R$ %.2f. \n" , userBank.getSaldo());
-                 default -> System.out.println("sas");
+                 case "5"-> userBank.usarChequeEspecial();
+                 default -> System.out.println(ANSI_RED + "Opção Invalida" + ANSI_RESET);
 
              }
 
          }while (!option.equals("0"));
-
-
+        scanner.close();
     }
 }

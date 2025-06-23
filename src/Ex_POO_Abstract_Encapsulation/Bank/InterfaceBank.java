@@ -2,10 +2,11 @@ package Ex_POO_Abstract_Encapsulation.Bank;
 
 public interface InterfaceBank {
 
-    void consultarChequeEspecial();
+    void consultarSaldo();
     void depositar();
     void sacar();
-    void pagarBoleto();
+    void consultarChequeEspecial();
+    void usarChequeEspecial();
 
 
 }

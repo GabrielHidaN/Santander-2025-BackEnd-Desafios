@@ -14,7 +14,6 @@ public abstract class Bank  implements InterfaceBank{
     private String nome;
     private double saldo;
     private double chequeEspecial;
-    private boolean chequeDisponivel = true;
     Scanner scanner = new Scanner(System.in);
 
     //Construtor
@@ -30,34 +29,22 @@ public abstract class Bank  implements InterfaceBank{
     public double getChequeEspecial() {
         return chequeEspecial;
     }
-
     public void setChequeEspecial(double chequeEspecial) {
         this.chequeEspecial = chequeEspecial;
     }
-
-    public boolean isChequeDisponivel() {
-        return chequeDisponivel;
-    }
-
-
     public String getNome() {
         return nome;
     }
-
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-
-    public double getSaldo() {
-        return this.saldo;
-    }
+    public double getSaldo() {return this.saldo;}
 
 
     // methods da interface
 
-
     @Override
-    public void consultarChequeEspecial() {
+    public void consultarSaldo() {
 
     }
 
@@ -67,12 +54,16 @@ public abstract class Bank  implements InterfaceBank{
     }
 
     @Override
-    public void pagarBoleto() {
-
-    }
-
-    @Override
     public void sacar() {
 
     }
+    @Override
+    public void consultarChequeEspecial(){
+    }
+
+    @Override
+    public void usarChequeEspecial() {
+
+    }
+
 }
